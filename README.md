@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Verisort AI
+
+Verisort AI Agent is an intelligent document search and retrieval system that helps teams find answers buried in documents in seconds. No more wasting hours digging through files.
+
+## Key Features
+
+- **⚡ Answers in Seconds** - Get instant responses from complex documents
+- **📍 Fully Traceable** - Every answer includes citations showing exactly where information came from
+- **🔒 Secure & Private** - Your data stays private and protected
+- **🎯 Accurate** - AI agent learns from your documents and provides precise answers
+- **📚 Built for Scale** - Handle thousands of documents effortlessly
+
+## How It Works
+
+1. **Upload** - Upload the documents your team already works with
+2. **Ask** - Ask questions in plain English the way you normally would
+3. **Get Answers** - Verisort finds the answer instantly with source citations
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the landing page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/` - Next.js app directory with main landing page
+- `src/components/block/` - Page section components (features, CTA form, FAQ, etc.)
+- `src/components/ui/` - Reusable UI components (input, button, form fields, etc.)
+- `src/lib/` - Utilities and constants
 
-## Learn More
+## Technologies
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org) - React framework for production
+- [TypeScript](https://www.typescriptlang.org) - Type-safe development
+- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS
+- [React Hook Form](https://react-hook-form.com) - Form management
+- [Zod](https://zod.dev) - Schema validation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app uses:
+- **Font optimization** with [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
+- **Biome** for code formatting and linting
+- **shadcn/ui** style components for consistent UI
 
-## Deploy on Vercel
+Edit any page by modifying files in `src/` - hot reload is enabled for instant feedback.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy on [Vercel](https://vercel.com) - the platform built for Next.js:
+
+```bash
+npm run build
+```
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for detailed instructions.

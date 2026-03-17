@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { Constants } from "@/lib/constant";
 import { cn } from "@/lib/utils";
 import BookCallButton from "./book-button";
-import Image from "next/image";
 
 export default function Navbar() {
   const [isDetached, setIsDetached] = useState(false);
