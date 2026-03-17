@@ -11,7 +11,7 @@ import FootLinks from "@/components/block/foot-links";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-6xl space-y-14 pb-16 lg:space-y-28">
+    <main className="mx-auto max-w-6xl space-y-20 pb-16 lg:space-y-28">
       <section className="flex flex-col gap-10 md:gap-5 lg:flex-row-reverse lg:pt-16">
         <VideoPlayer playbackId="01M2cyxz7ddEDmZknVKTJvp00lwTMZITgfWkQImP63MW8" />
 
