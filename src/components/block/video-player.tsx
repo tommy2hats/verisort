@@ -64,15 +64,17 @@ export function VideoPlayer({ playbackId }: { playbackId: string }) {
 
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: This div is used to detect mouse leave events for the hover state of the controls.
+    // biome-ignore lint/a11y/useKeyWithClickEvents: This div is used to detect mouse leave events for the hover state of the controls, and does not have any click events attached to it.
     <div
       ref={containerRef}
       className={cn(
-        "group relative w-full overflow-hidden transition-all md:scale-[80%] lg:scale-100",
+        "group relative w-full overflow-hidden shadow transition-all md:scale-[80%] lg:scale-100",
         loaded && "border border-border/30",
       )}
       style={{ aspectRatio: "16/9", backgroundColor: "#fff" }}
       onMouseLeave={() => setHovered(false)}
       onDoubleClick={toggleFullscreen}
+      onClick={togglePlay}
     >
       <MuxPlayer
         ref={ref}

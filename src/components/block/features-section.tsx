@@ -17,7 +17,7 @@ const FEATURES = [
     height: 720,
     aspectRatio: 16 / 9,
     description:
-      "Retrieve precise answers across thousands of documents in seconds.",
+      "Handle complex documents and get answers in just a few seconds.",
   },
   {
     image: `${folder_name}/tracability.png`,
@@ -26,7 +26,7 @@ const FEATURES = [
     height: 720,
     aspectRatio: 16 / 9,
     description:
-      "Each response is linked to the original document, so teams can verify exactly where the information came from.",
+      "Each response contains citations, so teams can verify exactly where the information came from.",
   },
   {
     image: `${folder_name}/doc-types.png`,
@@ -46,7 +46,7 @@ const FEATURES = [
     scale: 1,
     aspectRatio: 1 / 1,
     description:
-      "Our AI Agent is trained on your documents and can answer any question you have about them.",
+      "Our AI Agent learns from your files and answers any question you ask it.",
   },
   {
     image: `${folder_name}/security.png`,
@@ -55,21 +55,22 @@ const FEATURES = [
     height: 1000,
     scale: 1,
     aspectRatio: 1 / 1,
-    description:
-      "We take security seriously. Our AI Agent is trained on your documents and we never share your data with anyone else.",
+    description: "Security is our priority. your data stays private always.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="flex flex-col gap-10">
-      <h2 className="text-center font-medium text-2xl md:text-3xl">
-        <span className="italic">Why</span> teams love Verisort AI
+    <section className="mx-auto flex max-w-5xl flex-col gap-10">
+      <h2 className="text-center font-normal text-2xl text-foreground/85 md:text-3xl">
+        <span className="italic">Why</span> teams{" "}
+        <span className="font-semibold text-foreground/95">love</span> Verisort
+        AI
       </h2>
-      <div className="space-y-10">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+      <div className="space-y-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {FEATURES.slice(0, 2).map((feature) => (
-            <Card key={feature.title}>
+            <Card key={feature.title} className="shadow">
               <CardHeader
                 className="relative overflow-hidden p-0"
                 style={{
@@ -85,19 +86,21 @@ export default function FeaturesSection() {
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-background to-transparent" />
               </CardHeader>
-              <CardContent>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-                <CardDescription className="text-foreground/70">
+              <CardContent className="space-y-1">
+                <CardTitle className="text-xl md:text-lg">
+                  {feature.title}
+                </CardTitle>
+                <CardDescription className="text-foreground/70 md:text-sm">
                   {feature.description}
                 </CardDescription>
               </CardContent>
             </Card>
           ))}
         </div>
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {FEATURES.slice(2).map((feature) => (
-            <Card key={feature.title}>
-              <CardHeader className="relative mx-auto aspect-square w-full max-w-84 overflow-hidden p-0">
+            <Card key={feature.title} className="shadow">
+              <CardHeader className="relative mx-auto aspect-square w-full max-w-84 overflow-hidden p-0 md:max-h-60">
                 <Image
                   src={feature.image}
                   alt={feature.title}
@@ -110,9 +113,11 @@ export default function FeaturesSection() {
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-background to-transparent" />
               </CardHeader>
-              <CardContent>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-                <CardDescription className="text-foreground/70">
+              <CardContent className="flex h-fit flex-col justify-end gap-1">
+                <CardTitle className="text-xl md:text-lg">
+                  {feature.title}
+                </CardTitle>
+                <CardDescription className="text-foreground/70 md:text-sm">
                   {feature.description}
                 </CardDescription>
               </CardContent>
