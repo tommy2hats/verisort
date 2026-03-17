@@ -58,8 +58,9 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section>
-      <Accordion defaultValue={["what"]} className="mx-auto max-w-lg">
+    <section className="mx-auto w-full max-w-lg space-y-3 md:order-last">
+      <h2 className="text-xl">FAQs</h2>
+      <Accordion defaultValue={["what"]}>
         {faqs.map((faq) => (
           <AccordionItem key={faq.value} value={faq.value}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>

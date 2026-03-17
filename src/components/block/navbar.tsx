@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Constants } from "@/lib/constant";
 import { cn } from "@/lib/utils";
 import BookCallButton from "./book-button";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isDetached, setIsDetached] = useState(false);
@@ -39,6 +40,13 @@ export default function Navbar() {
         )}
         transition={{ type: "spring", stiffness: 360, damping: 34, mass: 0.35 }}
       >
+        {/* <Image
+          src="/assets/logooeoeo.png"
+          alt="Logo"
+          width={700}
+          height={300}
+          className="w-28.75 md:w-40"
+        /> */}
         <h2
           className={cn(
             "font-ike text-3xl",

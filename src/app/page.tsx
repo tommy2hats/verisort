@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import HowItWorks from "@/components/block/how-it-works";
 import CtaSection from "@/components/block/cta";
 import BookCallButton from "@/components/block/book-button";
+import FootLinks from "@/components/block/foot-links";
 
 export default function Home() {
   return (
@@ -53,7 +54,10 @@ export default function Home() {
 
       <Separator />
 
-      <FaqSection />
+      <section className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2">
+        <FaqSection />
+        <FootLinks />
+      </section>
     </main>
   );
 }

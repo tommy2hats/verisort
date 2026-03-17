@@ -4,9 +4,9 @@ import CtaForm from "./cta-form";
 
 export default function CtaSection() {
   return (
-    <section className="mx-auto flex max-w-5xl flex-col gap-10">
-      <div className="space-y-5 text-center">
-        <div className="mx-auto max-w-md text-center font-normal text-4xl text-foreground/85 md:max-w-xl md:text-6xl">
+    <section className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2">
+      <div className="flex flex-col items-center justify-center space-y-5 text-center md:order-last">
+        <div className="mx-auto max-w-md text-center font-normal text-4xl text-foreground/85 md:max-w-xl md:text-4xl">
           <h2>Ready to work </h2>
           <h2>
             <span className="font-semibold text-foreground/95">smarter</span>,
