@@ -1,6 +1,6 @@
 "use client";
 
-import z from "zod";
+import type z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
@@ -21,6 +21,9 @@ import {
 import { Button } from "../ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight02FreeIcons } from "@hugeicons/core-free-icons";
+import { formSchema } from "@/lib/schema/cta-form";
+import { bookCallAction } from "@/actions/book";
+import { Turnstile } from "nextjs-turnstile";
 
 const formatUKPhone = (value: string): string => {
   const digits = value.replace(/\D/g, "").slice(0, 10);
@@ -31,33 +34,22 @@ const formatUKPhone = (value: string): string => {
   return `${digits.slice(0, 4)} ${digits.slice(4, 7)} ${digits.slice(7)}`;
 };
 
-const schema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  phone: z
-    .string()
-    .regex(/^\d{4}\s\d{3}\s\d{3}$/, "Phone must be exactly 10 digits"),
-  message: z
-    .string()
-    .max(500, "Message must be under 500 characters")
-    .optional(),
-});
-
 export default function CtaForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const form = useForm<z.infer<typeof schema>>({
-    resolver: zodResolver(schema),
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
       message: "",
+      turnstileToken: "",
     },
   });
 
   const messageLength = form.watch("message")?.length || 0;
 
-  async function onSubmit(data: z.infer<typeof schema>) {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
       const phoneData = {
@@ -65,7 +57,12 @@ export default function CtaForm() {
         fullPhone: `+44 ${data.phone.replace(/\D/g, "")}`,
       };
       console.log("Form submitted:", phoneData);
-      form.reset();
+
+      const response = await bookCallAction(phoneData);
+
+      console.log("API response:", response);
+
+      // form.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -182,6 +179,25 @@ export default function CtaForm() {
           )}
         />
       </FieldGroup>
+
+      <div>
+        <Turnstile
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+          onSuccess={(token) =>
+            form.setValue("turnstileToken", token, { shouldDirty: true })
+          }
+          onError={() => console.error("Turnstile error")}
+          onExpire={() =>
+            form.setValue("turnstileToken", "", { shouldDirty: true })
+          }
+        />
+        {form.formState.errors.turnstileToken && (
+          <FieldError
+            errors={[form.formState.errors.turnstileToken]}
+            className="mt-2"
+          />
+        )}
+      </div>
 
       <Button
         type="submit"

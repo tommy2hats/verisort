@@ -4,7 +4,6 @@ import {
   FullScreenIcon,
   MinimizeScreenIcon,
   PauseIcon,
-  PlayIcon,
   VolumeHighIcon,
   VolumeMute02Icon,
 } from "@hugeicons/core-free-icons";
@@ -97,9 +96,20 @@ export function VideoPlayer({ playbackId }: { playbackId: string }) {
         }}
         accentColor="#ffffff"
       />
+      {!playing && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <Button
+            type="button"
+            onClick={togglePlay}
+            className="flex size-10 items-center justify-center rounded-full border border-border bg-white/20 text-black backdrop-blur-md transition-colors hover:bg-white/30"
+          >
+            <HugeiconsIcon icon={PauseIcon} />
+          </Button>
+        </div>
+      )}
       <div
         className={cn(
-          "absolute inset-0 z-10 flex items-end px-2 pb-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+          "absolute inset-0 z-20 flex items-end px-2 pb-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
           {
             "opacity-100": !playing,
           },
@@ -107,17 +117,6 @@ export function VideoPlayer({ playbackId }: { playbackId: string }) {
       >
         <div className="flex w-full items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Button
-              type="button"
-              onClick={togglePlay}
-              className="flex size-10 items-center justify-center rounded-full border border-border bg-white/20 text-black backdrop-blur-md transition-colors hover:bg-white/30"
-            >
-              {playing ? (
-                <HugeiconsIcon icon={PauseIcon} />
-              ) : (
-                <HugeiconsIcon icon={PlayIcon} />
-              )}
-            </Button>
             <Button
               type="button"
               onClick={toggleMute}
