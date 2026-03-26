@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const folder_name = "/features-sdgfsdg";
+const folder_name = "/features-wewee";
 
 const FEATURES = [
   {

@@ -208,6 +208,10 @@ export default function CtaForm() {
         {isSubmitting ? "Booking..." : "Book the call"}
         <HugeiconsIcon icon={ArrowRight02FreeIcons} />
       </Button>
+
+      <p className="text-muted-foreground text-sm">
+        We'll contact you within 24 hours. Expect a call from us soon!
+      </p>
     </form>
   );
 }

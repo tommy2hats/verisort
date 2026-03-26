@@ -5,7 +5,7 @@ import CtaForm from "./cta-form";
 export default function CtaSection() {
   return (
     <section className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2">
-      <div className="flex flex-col items-center justify-center space-y-5 text-center md:order-last">
+      <div className="flex flex-col items-center justify-center space-y-5 text-center">
         <div className="mx-auto max-w-md text-center font-normal text-4xl text-foreground/85 md:max-w-xl md:text-4xl">
           <h2>Ready to work </h2>
           <h2>
