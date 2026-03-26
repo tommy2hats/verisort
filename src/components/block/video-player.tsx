@@ -97,11 +97,11 @@ export function VideoPlayer({ playbackId }: { playbackId: string }) {
         accentColor="#ffffff"
       />
       {!playing && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
           <Button
             type="button"
             onClick={togglePlay}
-            className="flex size-10 items-center justify-center rounded-full border border-border bg-white/20 text-black backdrop-blur-md transition-colors hover:bg-white/30"
+            className="flex size-10 items-center justify-center rounded-full border border-border bg-white/20 text-black backdrop-blur-md transition-all duration-300 hover:bg-white/30"
           >
             <HugeiconsIcon icon={PauseIcon} />
           </Button>

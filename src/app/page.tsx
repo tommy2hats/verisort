@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-6xl space-y-20 pb-16 lg:space-y-28">
       <section className="flex flex-col gap-10 md:gap-5 lg:flex-row-reverse lg:pt-16">
-        <VideoPlayer playbackId="01M2cyxz7ddEDmZknVKTJvp00lwTMZITgfWkQImP63MW8" />
+        <VideoPlayer playbackId="SNIU6LYyn02OTGDePoM7dZUXoqguN8ApGlbD5mHJgu84" />
 
         <div className="flex flex-col items-center gap-8 text-center lg:items-start lg:justify-center lg:text-start">
           <h1 className="mx-auto max-w-sm font-normal text-3xl text-foreground/85 leading-tight tracking-tight md:max-w-md md:text-4xl lg:mx-0 lg:max-w-none lg:text-4xl">
