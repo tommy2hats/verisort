@@ -64,8 +64,7 @@ export default function FeaturesSection() {
     <section className="mx-auto flex max-w-5xl flex-col gap-10">
       <h2 className="text-center font-normal text-2xl text-foreground/85 md:text-3xl">
         <span className="italic">Why</span> teams{" "}
-        <span className="font-semibold text-foreground/95">love</span> Verisort
-        AI
+        <span className="font-semibold text-accent/95">love</span> Verisort AI
       </h2>
       <div className="space-y-5">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">

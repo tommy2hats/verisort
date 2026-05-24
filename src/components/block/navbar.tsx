@@ -48,7 +48,7 @@ export default function Navbar() {
         /> */}
         <h2
           className={cn(
-            "font-ike text-3xl",
+            "font-ike text-accent text-3xl",
             isDetached &&
               "border/40 mt-0 border bg-background/50 px-2 py-0 backdrop-blur-3xl",
           )}
@@ -57,7 +57,7 @@ export default function Navbar() {
         </h2>
         <div
           className={cn(
-            "",
+            "text-accent",
             isDetached &&
               "border/40 mt-0 border bg-background/50 px-0 py-0 backdrop-blur-3xl",
           )}

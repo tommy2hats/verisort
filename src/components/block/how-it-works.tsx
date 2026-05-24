@@ -41,7 +41,8 @@ export default function HowItWorks() {
       <div className="mx-auto flex flex-col items-center space-y-1">
         <Badge>How it works</Badge>
         <h2 className="text-center font-normal text-2xl md:text-3xl">
-          Three <span className="font-semibold italic">Simple</span> steps
+          Three <span className="font-semibold italic text-accent">Simple</span>{" "}
+          steps
         </h2>
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">

@@ -203,9 +203,9 @@ export default function CtaForm() {
         type="submit"
         size="lg"
         disabled={isSubmitting}
-        className="w-full"
+        className="w-full bg-accent"
       >
-        {isSubmitting ? "Booking..." : "Book the call"}
+        {isSubmitting ? "Booking..." : "Book the demo"}
         <HugeiconsIcon icon={ArrowRight02FreeIcons} />
       </Button>
 

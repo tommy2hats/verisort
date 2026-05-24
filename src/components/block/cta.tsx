@@ -9,12 +9,12 @@ export default function CtaSection() {
         <div className="mx-auto max-w-md text-center font-normal text-4xl text-foreground/85 md:max-w-xl md:text-4xl">
           <h2>Ready to work </h2>
           <h2>
-            <span className="font-semibold text-foreground/95">smarter</span>,
-            not harder?
+            <span className="font-semibold text-accent/95">smarter</span>, not
+            harder?
           </h2>
         </div>
         <p className="text-foreground/80 text-sm">
-          Book a call with us today. Takes less than a minute.
+          Book a demo with us today. Takes less than a minute.
         </p>
       </div>
 

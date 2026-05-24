@@ -52,7 +52,7 @@ const faqs = [
     value: "cost",
     question: "How much does it cost?",
     answer:
-      "Pricing depends on your team size and document volume. Book a call and we\u2019ll give you a clear quote — no hidden fees.",
+      "Pricing depends on your team size and document volume. Book a demo and we\u2019ll give you a clear quote — no hidden fees.",
   },
 ];
 
