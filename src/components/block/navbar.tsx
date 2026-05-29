@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Constants } from "@/lib/constant";
 import { cn } from "@/lib/utils";
@@ -46,15 +47,16 @@ export default function Navbar() {
           height={300}
           className="w-28.75 md:w-40"
         /> */}
-        <h2
+        <Link
+          href="/"
           className={cn(
-            "font-ike text-accent text-3xl",
+            "font-ike text-3xl text-accent",
             isDetached &&
               "border/40 mt-0 border bg-background/50 px-2 py-0 backdrop-blur-3xl",
           )}
         >
           {Constants.SITE_NAME}
-        </h2>
+        </Link>
         <div
           className={cn(
             "text-accent",
