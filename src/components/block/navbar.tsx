@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Constants } from "@/lib/constant";
@@ -40,14 +41,26 @@ export default function Navbar() {
         )}
         transition={{ type: "spring", stiffness: 360, damping: 34, mass: 0.35 }}
       >
-        {/* <Image
-          src="/assets/logooeoeo.png"
-          alt="Logo"
-          width={700}
-          height={300}
-          className="w-28.75 md:w-40"
-        /> */}
         <Link
+          href="/"
+          className={cn(
+            "flex items-center gap-2",
+            isDetached &&
+              "border/40 mt-0 border bg-background/50 px-2 py-0 backdrop-blur-3xl",
+          )}
+        >
+          <Image
+            src="/assets/verisort-logo.png"
+            alt="Logo"
+            width={700}
+            height={300}
+            className="w-8 object-contain md:w-10"
+          />
+          <h3 className="font-bricolage font-medium text-2xl tracking-tight md:text-3xl">
+            {Constants.SITE_NAME}
+          </h3>
+        </Link>
+        {/* <Link
           href="/"
           className={cn(
             "font-ike text-3xl text-accent",
@@ -56,7 +69,7 @@ export default function Navbar() {
           )}
         >
           {Constants.SITE_NAME}
-        </Link>
+        </Link> */}
         <div
           className={cn(
             "text-accent",

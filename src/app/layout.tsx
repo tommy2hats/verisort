@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/block/navbar";
-import { geistMono, geistSans, ikeBold } from "@/lib/font";
 import { Toaster } from "sonner";
+import Navbar from "@/components/block/navbar";
+import { bricolage, geistMono, geistSans, ikeBold } from "@/lib/font";
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ikeBold.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${ikeBold.variable} ${bricolage.variable} antialiased`}
       >
         <Navbar />
         <main className="mt-20 px-6">{children}</main>

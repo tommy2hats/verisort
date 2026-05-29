@@ -1,5 +1,5 @@
-import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight02FreeIcons } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -16,7 +16,7 @@ export default function BookCallButton() {
     <Dialog>
       <form>
         <DialogTrigger>
-          <Button size="lg" className="mx-auto w-fit px-5">
+          <Button size="lg" className="mx-auto w-fit bg-accent px-5">
             <span className="mr-1 size-2 rounded-full bg-green-400" />
             Book a demo
             <HugeiconsIcon icon={ArrowRight02FreeIcons} />

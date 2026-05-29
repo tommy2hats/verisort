@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import LocalFont from "next/font/local";
 
 export const geistSans = Geist({
@@ -15,4 +15,10 @@ export const ikeBold = LocalFont({
   src: "./font/ike-bold.ttf",
   display: "swap",
   variable: "--font-ike-bold",
+});
+
+export const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage-grotesque",
+  display: "swap",
+  subsets: ["latin"],
 });
